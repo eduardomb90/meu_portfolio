@@ -6,6 +6,9 @@
   padding: 10px 10px;
 }
 
+
+/* LOGO */
+
 .logo {
   height: 100%; /* Deixe a altura do contêiner igual à da navbar */
 }
@@ -16,18 +19,17 @@
   display: block; /* Remove qualquer espaço ao redor da imagem */
 }
 
+
 /* Botão Hamburger */
+
 .hamburger {
-  border: 1rem solid white ;
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  position: relative;
+  width: 30px; /* Largura do botão */
+  height: 30px; /* Altura do botão */
+
+  cursor: pointer;
   background: none;
   border: none;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
   z-index: 1000;
 }
 
@@ -35,7 +37,8 @@
 .hamburger::after {
   content: '';
   position: absolute;
-  background: none;
+  background: linear-gradient(to right, #ffffff 20%, #9b95a6 90%);
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .hamburger::before {
@@ -54,6 +57,24 @@
   right: 50%;
 }
 
+/* hamburger aberto */
+.hamburger.open::before,
+.hamburger.open::after {
+  background: linear-gradient(to right, #252582 20%, #000000 90%);
+}
+
+
+.hamburger.open::before {
+  transform: rotate(45deg); /* Gira a linha superior */
+  top: 100%; /* Centraliza verticalmente */
+  transform-origin: center;
+}
+
+.hamburger.open::after {
+  transform: rotate(-45deg); /* Gira a linha inferior */
+  top: 100%; /* Centraliza verticalmente */
+  transform-origin: center;
+}
 
 /* Menu Expandido */
 .menu {
@@ -68,10 +89,14 @@
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
   padding: 20px;
   z-index: 999;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
 .menu.open {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .menu .close-button {

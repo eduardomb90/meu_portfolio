@@ -5,23 +5,22 @@
   </div>
 
   <!-- Botão Hamburguer -->
-  <button class="hamburger" (click)="toggleMenu()">
-    <!-- Menu Expandido -->
-    <div class="menu" [class.open]="isMenuOpen">
-      <button class="close-button" >&#10005;</button>
-      <ul>
-        <li><a routerLink="/my-work">Meu Trabalho</a></li>
-        <li><a routerLink="/my-shelf">Sobre Mim</a></li>
-        <li><a routerLink="/my-resume">Meu Portfólio</a></li>
-      </ul>
-      <div class="contact">
-        <p>contato</p>
-        <a href="https://t.me/mrolaolu">t.me/mrolaolu</a>
-      </div>
-      <div class="social">
-        <a href="#">GH</a>
-        <a href="#">LN</a>
-      </div>
+  <button class="hamburger" (click)="toggleMenu()" [class.open]="isMenuOpen"></button>
+
+  <!-- Menu Expandido -->
+  <div class="menu" [class.open]="isMenuOpen">
+    <ul>
+      <li><a routerLink="/my-work">Meu Trabalho</a></li>
+      <li><a routerLink="/my-shelf">Sobre Mim</a></li>
+      <li><a routerLink="/my-resume">Meu Portfólio</a></li>
+    </ul>
+    <div class="contact">
+      <p>contato</p>
+      <a href="https://t.me/mrolaolu">t.me/mrolaolu</a>
     </div>
-  </button>
+    <div class="social">
+      <a href="#">GH</a>
+      <a href="#">LN</a>
+    </div>
+  </div>
 </div>
